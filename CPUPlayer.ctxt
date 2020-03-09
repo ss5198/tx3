@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=CPUPlayer
+comment1.params=x
+comment1.target=CPUPlayer(char)
+comment2.params=brd\ boolBrd\ playerSymb
+comment2.target=void\ cpuTurn(char[][],\ boolean[][],\ char)
+comment3.params=
+comment3.target=boolean\ checkBoard()
+numComments=4
