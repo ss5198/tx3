@@ -3,7 +3,7 @@ import java.util.Scanner;
 //fix board[i].length -1s
 public class TicTacToe
 {
-    public char [][] board = new char [3][3];
+    public String [][] board = new String [3][3];
     public boolean [][] filled = new boolean [3][3];
     Scanner inp = new Scanner(System.in);
     
@@ -61,18 +61,23 @@ public class TicTacToe
     
     public void pvpGame(){
         boolean gameComplete = false;
-        HumanPlayer p1 = new HumanPlayer('x');
-        HumanPlayer p2 = new HumanPlayer('o');
+        HumanPlayer p1 = new HumanPlayer("x");
+        HumanPlayer p2 = new HumanPlayer("o");
+        int [] move = new int [2];
         resetBoard();
         while(!gameComplete){
             printBoard();
             
             if (!checkBoardFill()){
-                p1.playerTurn(board, filled, p1.symb);
+                move = p1.playerTurn(board, filled, p1.symb);
+                board [move[0]][move[1]] = p1.symb;
+                filled [move[0]][move[1]] = true;
             }
             printBoard();
             if (!checkBoardFill() && !checkBoardWin(p1.symb)){
-                p2.playerTurn(board, filled, p2.symb);
+                move = p2.playerTurn(board, filled, p2.symb);
+                board [move[0]][move[1]] = p2.symb;
+                filled [move[0]][move[1]] = true;
                 printBoard();
             }
             else if (!checkBoardWin(p1.symb)){
@@ -101,10 +106,10 @@ public class TicTacToe
        }
     }
     
-    public void cpuGame(){
+    /*public void cpuGame(){
         boolean gameComplete = false;
-        HumanPlayer p1 = new HumanPlayer('x');
-        CPUPlayer p2 = new CPUPlayer('o');
+        HumanPlayer p1 = new HumanPlayer("x");
+        CPUPlayer p2 = new CPUPlayer("o");
         while(!gameComplete){
             printBoard();
             if (checkBoardFill()){
@@ -139,7 +144,7 @@ public class TicTacToe
                 resetBoard();
             }
        }
-    }
+    }*/
     
     private boolean checkBoardFill(){
         for (int i = 0; i < board.length -1; i++){           
@@ -154,7 +159,7 @@ public class TicTacToe
         return true;
     }
     
-    private boolean checkBoardWin(char symb){
+    private boolean checkBoardWin(String symb){
         for (int i = 0; i < board.length -1; i++){
             if (board[i][0] == symb && board[i][1] == symb && board[i][2] == symb){
                 return true;

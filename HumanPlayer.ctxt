@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=HumanPlayer
 comment1.params=x
-comment1.target=HumanPlayer(char)
+comment1.target=HumanPlayer(java.lang.String)
 comment2.params=brd\ boolBrd\ playerSymb
-comment2.target=void\ playerTurn(char[][],\ boolean[][],\ char)
+comment2.target=int[]\ playerTurn(java.lang.String[][],\ boolean[][],\ java.lang.String)
 numComments=3

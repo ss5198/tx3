@@ -2,14 +2,12 @@
 
 public class CPUPlayer
 {
-    public char [][] board = new char [3][3];
-    public boolean [][] filled = new boolean [3][3];
-    char symb;
-    public CPUPlayer(char x){
+    String symb;
+    public CPUPlayer(String x){
         this.symb = x;
     }
     
-    public void cpuTurn(char[][] brd, boolean [][] boolBrd, char playerSymb){
+    public void cpuTurn(String[][] brd, boolean [][] boolBrd, String playerSymb){
         int row = -1, column = -1;
         boolean done = false;
         while(!done){
@@ -30,7 +28,7 @@ public class CPUPlayer
         }
               
     }
-    private boolean checkBoard(){
+    /*private boolean checkBoard(){
         for (int i = 0; i < board.length; i++){
             
                 for (int ii = 0; ii < board[i].length; ii++){
@@ -41,6 +39,6 @@ public class CPUPlayer
                 }  
             }
         return true;
-    }
+    }*/
    
 }
